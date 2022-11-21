@@ -3,6 +3,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     font: normal 15px 'Roboto', sans-serif;
 }
 
@@ -27,18 +28,33 @@ body {
 }
 
 .wrapper {
-    display: flex;
-    width: 100%;
     width: 300px;
     height: 600px;
+    padding: 15px;
     background-color: rgba(255, 255, 255, 0.144);
     border-radius: 20px;
     backdrop-filter: blur(30px);
     box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.233) ;
 }
 
+.display {
+    text-align: right;
+    overflow-wrap: break-word;
+}
+
+#previous-display {
+    color: #8D9390;
+}
+
+#result-display {
+    color: #3F4142;
+    font-weight: bold;
+    font-size: 2em;
+}
+
 .pad {
-    
+    display: flex;
+    padding: 0.2em;
 }
 
 button {
@@ -48,6 +64,13 @@ button {
     border: none;
     border-radius: 5px;
     background: linear-gradient(145deg, #ffffff7e, #e6e6e67e);
+    box-shadow:  20px 20px 60px #d9d9d9,
+             -20px -20px 60px #ffffff;
+}
+
+button:hover {
+    border-radius: 5px;
+    background: linear-gradient(145deg, #e6e6e67e, #ffffff7e);
     box-shadow:  20px 20px 60px #d9d9d9,
              -20px -20px 60px #ffffff;
 }
