@@ -33,7 +33,7 @@ body {
     background: linear-gradient(145deg, #ffffff5d, transparent);
     border-radius: 20px;
     backdrop-filter: blur(10px);
-    box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.233) ;
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.233) ;
 }
 
 .display {
@@ -61,7 +61,7 @@ body {
 
 button {
     height: 3.5em;
-    color: #0862A1;
+    color: #0b85d6;
     font-weight: 500;
     font-size: 1.2em;
     border: none;
