@@ -29,9 +29,8 @@ body {
 
 .wrapper {
     width: 300px;
-    height: 600px;
     padding: 15px;
-    background-color: rgba(255, 255, 255, 0.144);
+    background-color: rgba(255, 255, 255, 0.329);
     border-radius: 20px;
     backdrop-filter: blur(30px);
     box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.233) ;
@@ -40,30 +39,34 @@ body {
 .display {
     text-align: right;
     overflow-wrap: break-word;
+    padding: 100px 0;
 }
 
 #previous-display {
-    color: #8D9390;
+    color: #cecece;
 }
 
 #result-display {
     color: #3F4142;
     font-weight: bold;
-    font-size: 2em;
+    font-size: 3em;
 }
 
 .pad {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 5px;
     padding: 0.2em;
 }
 
 button {
-    height: 40px;
-    width: 40px;
-    color: white;
+    height: 3.5em;
+    color: #0862A1;
+    font-weight: 500;
     border: none;
     border-radius: 5px;
-    background: linear-gradient(145deg, #ffffff7e, #e6e6e67e);
+    cursor: pointer;
+    background: linear-gradient(145deg, #ffffff80, #e6e6e680);
     box-shadow:  20px 20px 60px #d9d9d9,
              -20px -20px 60px #ffffff;
 }
@@ -73,4 +76,18 @@ button:hover {
     background: linear-gradient(145deg, #e6e6e67e, #ffffff7e);
     box-shadow:  20px 20px 60px #d9d9d9,
              -20px -20px 60px #ffffff;
+}
+
+.number {
+    color: white;
+}
+
+#equalbtn {
+    grid-column: span 2;
+    color: white;
+    background: linear-gradient(145deg, #0861a131, #0e99f638);
+}
+
+#equalbtn:hover {
+    background: linear-gradient(145deg, #0861a15d, #0e99f65e);
 }
