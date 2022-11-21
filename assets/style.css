@@ -30,9 +30,9 @@ body {
 .wrapper {
     width: 300px;
     padding: 15px;
-    background-color: rgba(255, 255, 255, 0.329);
+    background: linear-gradient(145deg, #ffffff5d, transparent);
     border-radius: 20px;
-    backdrop-filter: blur(30px);
+    backdrop-filter: blur(10px);
     box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.233) ;
 }
 
@@ -43,7 +43,7 @@ body {
 }
 
 #previous-display {
-    color: #cecece;
+    color: rgb(133, 128, 128);
 }
 
 #result-display {
@@ -63,19 +63,15 @@ button {
     height: 3.5em;
     color: #0862A1;
     font-weight: 500;
+    font-size: 1.2em;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
-    background: linear-gradient(145deg, #ffffff80, #e6e6e680);
-    box-shadow:  20px 20px 60px #d9d9d9,
-             -20px -20px 60px #ffffff;
+    background: linear-gradient(145deg, #ffffff80, #e6e6e67e);
 }
 
 button:hover {
-    border-radius: 5px;
-    background: linear-gradient(145deg, #e6e6e67e, #ffffff7e);
-    box-shadow:  20px 20px 60px #d9d9d9,
-             -20px -20px 60px #ffffff;
+    background: linear-gradient(145deg, #e6e6e67e, #ffffff80);
 }
 
 .number {
@@ -85,9 +81,9 @@ button:hover {
 #equalbtn {
     grid-column: span 2;
     color: white;
-    background: linear-gradient(145deg, #0861a131, #0e99f638);
+    background: linear-gradient(145deg, #0861a16e, #0e99f670);
 }
 
 #equalbtn:hover {
-    background: linear-gradient(145deg, #0861a15d, #0e99f65e);
+    background: linear-gradient(145deg, #0861a1cc, #0e99f6c9);
 }
