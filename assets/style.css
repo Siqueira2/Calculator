@@ -44,6 +44,7 @@ body {
 
 #previous-display {
     color: rgb(133, 128, 128);
+    height: 1em;
 }
 
 #result-display {
