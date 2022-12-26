@@ -4,9 +4,9 @@ const keys = document.querySelector("#pad")
 let firstnum,
     lastnum,
     operator = false,
-    op = ""
+    symbol = ""
 
-keys.addEventListener("click", (e)=>{
+keys.addEventListener("click", (e)=>{ // Teclado virtual
     const key = e.target.innerText
     
     if(Number(key) >= 0 || key === "."){
@@ -17,7 +17,7 @@ keys.addEventListener("click", (e)=>{
     if(key === "*" || key === "/" || key === "+" || key === "-"){
         previousOperation.innerHTML += key
         display.textContent = 0
-        op = key
+        symbol = key
         operator = true
     }
 
@@ -30,21 +30,32 @@ keys.addEventListener("click", (e)=>{
     }
 })
 
-/*document.addEventListener("keydown", (event)=>{
+document.addEventListener("keydown", (event)=>{ // Teclado físico
+    const length = display.textContent.length;
     if(Number(event.key) >= 0 || event.key === "."){
-        insertNumber(key)
+        insertNumber(event.key)
+        previousOperation.innerHTML += event.key
     }
 
     if(event.key === "*" || event.key === "/" || event.key === "+" || event.key === "-"){
+        previousOperation.innerHTML += event.key
         display.textContent = 0
-        op = event.key
+        symbol = event.key
         operator = true
     }
 
-    if(event.key === "="){
+    if(event.key === "Enter"){
         calculate()
     }
-})*/
+
+  if (event.key === "Backspace" && display.textContent !== "0" && length > 0) {
+    if (length === 1) {
+      display.textContent = "0";
+    } else {
+      display.textContent = display.textContent.slice(0, length - 1);
+    }
+  }
+})
 
 function insertNumber(value){
     if(display.textContent === "0"){
@@ -74,7 +85,7 @@ function clear(){
 function calculate(){
     display.textContent = 0
     let result
-    switch (op){
+    switch (symbol){
         case "*":
             result = firstnum * lastnum //Multiply
             break
