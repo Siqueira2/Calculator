@@ -9,6 +9,7 @@ let firstnum,
 keys.addEventListener("click", (e)=>{ // Teclado virtual
     const key = e.target.innerText
     
+
     if(Number(key) >= 0 || key === "."){
         insertNumber(key)
         previousOperation.innerHTML += key
@@ -21,17 +22,28 @@ keys.addEventListener("click", (e)=>{ // Teclado virtual
         operator = true
     }
 
-    if(key === "="){
-        calculate()
-    }
-    
-    if(key === "CE"){
-        clear()
+    switch(key) {
+        case '=':
+            calculate()
+            break
+        case 'CE':
+            clear()
+            break
+        case 'DEL':
+            let length = display.textContent.length
+            if (length === 1) {
+                display.textContent = "0"
+                previousOperation.innerHTML = display.textContent
+              } else {
+                display.textContent = display.textContent.slice(0, length - 1)
+                previousOperation.innerHTML = display.textContent
+              }
+            break
     }
 })
 
 document.addEventListener("keydown", (event)=>{ // Teclado físico
-    const length = display.textContent.length;
+    const length = display.textContent.length
     if(Number(event.key) >= 0 || event.key === "."){
         insertNumber(event.key)
         previousOperation.innerHTML += event.key
@@ -51,13 +63,16 @@ document.addEventListener("keydown", (event)=>{ // Teclado físico
   if (event.key === "Backspace" && display.textContent !== "0" && length > 0) {
     if (length === 1) {
       display.textContent = "0";
+      previousOperation.innerHTML = display.textContent
     } else {
       display.textContent = display.textContent.slice(0, length - 1);
+      previousOperation.innerHTML = display.textContent
     }
   }
 })
 
 function insertNumber(value){
+    
     if(display.textContent === "0"){
         display.innerHTML = value
     } else {
@@ -68,8 +83,6 @@ function insertNumber(value){
     } else {
         firstnum = Number(display.textContent)
     }
-    console.log(`firstnum: ${firstnum}`)
-    console.log(`lastnum: ${lastnum}`)
 }
 
 function clear(){
@@ -78,8 +91,6 @@ function clear(){
     operator = false
     previousOperation.innerHTML = ""
     display.textContent = "0"
-    console.log(`firstnum: ${firstnum}`)
-    console.log(`lastnum: ${lastnum}`)
 }
 
 function calculate(){

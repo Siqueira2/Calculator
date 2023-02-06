@@ -75,6 +75,10 @@ button:hover {
     background: linear-gradient(145deg, #cfcfcf7e, #d6d6d680);
 }
 
+#clear{
+    grid-column: span 2;
+}
+
 .number {
     color: white;
 }
